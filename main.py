@@ -19,7 +19,11 @@ def power(x, y):
     return x ** y
 
 def square_root(x):
-    return math.sqrt(x)
+    if x >= 0:
+        return math.sqrt(x)
+    else:
+        return "Помилка: квадратний корінь від від'ємного числа"
+    
 
 print("Виберіть операцію:")
 print("1. Сума")
@@ -31,20 +35,20 @@ print("6. Добуток квадратного кореня")
 
 вибір = input("Ваш вибір: ")
 
-число_1 = float(input("Введіть перше число: "))
-число_2 = float(input("Введіть друге число: "))
+number_1 = float(input("Введіть перше число: "))
+number_2 = float(input("Введіть друге число: "))
 
 if вибір == '1':
-    print(число_1, "+", число_2, "=", add(число_1, число_2))
+    print(number_1, "+", number_2, "=", add(number_1, number_2))
 elif вибір == '2':
-    print(число_1, "-", число_2, "=", subtract(число_1, число_2))
+    print(number_1, "-", number_2, "=", subtract(number_1, number_2))
 elif вибір == '3':
-    print(число_1, "*", число_2, "=", multiply(число_1, число_2))
+    print(number_1, "*", number_2, "=", multiply(number_1, number_2))
 elif вибір == '4':
-    print(число_1, "/", число_2, "=", divide(число_1, число_2))
+    print(number_1, "/", number_2, "=", divide(number_1, number_2))
 elif вибір == '5':
-    print(число_1, "^", число_2, "=", power(число_1, число_2))
+    print(number_1, "^", number_2, "=", power(number_1, number_2))
 elif вибір == '6':
-    print("Квадратний корінь", число_1, "=", square_root(число_1))
+    print("Квадратний корінь", number_1, "=", square_root(number_1))
 else:
     print("Невірний вхід")
