@@ -1,36 +1,54 @@
-def додати(x, y):
+import math
+
+def add(x, y):
     return x + y
 
-def відняти(x, y):
+def subtract(x, y):
     return x - y
 
-def множити(x, y):
+def multiply(x, y):
     return x * y
 
-def діілити(x, y):
+def divide(x, y):
     if y != 0:
         return x / y
     else:
         return "Помилка: ділення на нуль"
+
+def power(x, y):
+    return x ** y
+
+def square_root(x):
+    if x >= 0:
+        return math.sqrt(x)
+    else:
+        return "Помилка: квадратний корінь від від'ємного числа"
+    
 
 print("Виберіть операцію:")
 print("1. Сума")
 print("2. Віднімання")
 print("3. Множення")
 print("4. Ділення")
+print("5. Піднесення до степені")
+print("6. Добуток квадратного кореня")
 
 вибір = input("Ваш вибір: ")
 
-число_1 = float(input("Введіть перше число: "))
-число_2 = float(input("Введіть друге число: "))
+number_1 = float(input("Введіть перше число: "))
+number_2 = float(input("Введіть друге число: "))
 
 if вибір == '1':
-    print(число_1, "+", число_2, "=", додати(число_1, число_2))
+    print(number_1, "+", number_2, "=", add(number_1, number_2))
 elif вибір == '2':
-    print(число_1, "-", число_2, "=", відняти(число_1, число_2))
+    print(number_1, "-", number_2, "=", subtract(number_1, number_2))
 elif вибір == '3':
-    print(число_1, "*", число_2, "=", множити(число_1, число_2))
+    print(number_1, "*", number_2, "=", multiply(number_1, number_2))
 elif вибір == '4':
-    print(число_1, "/", число_2, "=", діілити(число_1, число_2))
+    print(number_1, "/", number_2, "=", divide(number_1, number_2))
+elif вибір == '5':
+    print(number_1, "^", number_2, "=", power(number_1, number_2))
+elif вибір == '6':
+    print("Квадратний корінь", number_1, "=", square_root(number_1))
 else:
     print("Невірний вхід")
