@@ -23,6 +23,10 @@ def square_root(x):
         return math.sqrt(x)
     else:
         return "Помилка: квадратний корінь від від'ємного числа"
+
+def percentage(number, percent):
+    """Обчислює введений відсоток від введеного числа"""
+    return (number * percent) / 100
     
 
 print("Виберіть операцію:")
@@ -32,6 +36,7 @@ print("3. Множення")
 print("4. Ділення")
 print("5. Піднесення до степені")
 print("6. Добуток квадратного кореня")
+print("7. Відсоток від числа")
 
 вибір = input("Ваш вибір: ")
 
@@ -50,5 +55,7 @@ elif вибір == '5':
     print(number_1, "^", number_2, "=", power(number_1, number_2))
 elif вибір == '6':
     print("Квадратний корінь", number_1, "=", square_root(number_1))
+elif вибір == '7':
+    print(number_2, "% від", number_1, "=", percentage(number_1, number_2))
 else:
     print("Невірний вхід")
